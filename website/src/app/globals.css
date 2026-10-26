@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: #FBFAF8;
+  --canvas-pure: #FFFFFF;
+  --ink: #121016;
+  --grey: #8B8794;
+  --hairline: #ECE8E4;
+  --plum: #4A2275;
+  --gold: #B8924A;
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Tabular figures for all numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hairline borders */
+.hairline-border {
+  border: 1px solid var(--hairline);
+}
+
+.hairline-b {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.hairline-t {
+  border-top: 1px solid var(--hairline);
+}
+
+.hairline-r {
+  border-right: 1px solid var(--hairline);
+}
+
+.hairline-l {
+  border-left: 1px solid var(--hairline);
+}
+
+/* Ambient luxury mesh gradient (very soft, slowly drifting) */
+.mesh-ambient {
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(247, 240, 226, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(232, 224, 245, 0.35) 0%, transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(244, 226, 222, 0.30) 0%, transparent 50%),
+    #FBFAF8;
+  background-attachment: fixed;
+}
+
+/* Slow calm skeleton shimmer without spinners */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(236, 232, 228, 0.4) 0%,
+    rgba(247, 245, 242, 0.8) 50%,
+    rgba(236, 232, 228, 0.4) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.2s infinite ease-in-out;
+}
+
+/* Custom quiet scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ECE8E4;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B8794;
+}
+
+/* Continuous card marquee */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 42s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

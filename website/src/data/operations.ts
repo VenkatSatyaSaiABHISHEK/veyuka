@@ -1,0 +1,43 @@
+import { OperationsIncident } from '../types';
+
+export const mockIncidents: OperationsIncident[] = [
+  {
+    id: 'INC-101',
+    bookingId: 'VYK-2024-8901',
+    eventTitle: 'Imperial Heritage Wedding (Taj Mahal Palace)',
+    customerName: 'Ananya Singhania',
+    type: 'delay',
+    severity: 'medium',
+    description: 'Imported Dutch tuberose consignment stuck in customs at Mumbai air cargo. Alternate Kashmir saffron flora sourced on backup.',
+    assignedStaff: 'Tanya Singhal',
+    status: 'investigating',
+    time: '45 mins ago',
+    resolutionNotes: 'Air cargo clearing agent reached airport; expected clearance by 6 PM.',
+  },
+  {
+    id: 'INC-102',
+    bookingId: 'VYK-2024-8902',
+    eventTitle: 'Golden Jubilee Gala (Soho House)',
+    customerName: 'Shreya Iyer',
+    type: 'complaint',
+    severity: 'low',
+    description: 'Soho House rooftop terrace requested decibel test limit verification for the vinyl DJ booth.',
+    assignedStaff: 'Rohan Varma',
+    status: 'resolved',
+    time: '2 hours ago',
+    resolutionNotes: 'Acoustic baffle foam and directional cardioid monitors installed. Level pegged at 68dB.',
+  },
+  {
+    id: 'INC-103',
+    bookingId: 'VYK-2024-8904',
+    eventTitle: 'Apex Executive Summit (Jio Convention)',
+    customerName: 'Devraj Kapoor',
+    type: 'emergency',
+    severity: 'high',
+    description: 'Satellite uplink van requires police permit for BKC parking slot allocation.',
+    assignedStaff: 'Kabir Mehta',
+    status: 'open',
+    time: '3 hours ago',
+    resolutionNotes: 'Liaison team deployed with official Jio permit copy.',
+  },
+];
